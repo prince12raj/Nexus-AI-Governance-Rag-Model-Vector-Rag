@@ -1,280 +1,258 @@
-````markdown
 <div align="center">
 
 # 🛡️ NEXUS AI GOVERNANCE
 
 ### Intelligent Compliance • Regulatory Intelligence • AI Governance
 
-**A RAG-powered compliance audit platform that connects organizational policies with regulatory evidence using semantic search and vector retrieval.**
+**A RAG-based compliance audit platform that connects organizational policies with regulatory evidence using semantic search and vector retrieval.**
 
-<br/>
+<br>
 
-[![Live Demo](https://img.shields.io/badge/🌐_LIVE_DEMO-Nexus_AI_Governance-00C853?style=for-the-badge)](https://nexus-ai-governance-0007.streamlit.app/)
-[![Hugging Face](https://img.shields.io/badge/🤗_HUGGING_FACE-SPACE-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/prince12raj/nexus-ai-governance)
-[![GitHub](https://img.shields.io/badge/GITHUB-REPOSITORY-181717?style=for-the-badge&logo=github)](https://github.com/prince12raj/nexus-ai-governance)
+[![Live Demo](https://img.shields.io/badge/🚀_LIVE_DEMO-00C853?style=for-the-badge)](https://nexus-ai-governance-0007.streamlit.app/)
+[![Hugging Face](https://img.shields.io/badge/🤗_HUGGING_FACE-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/prince12raj/nexus-ai-governance)
+[![GitHub](https://img.shields.io/badge/💻_SOURCE_CODE-181717?style=for-the-badge\&logo=github)](https://github.com/prince12raj/nexus-ai-governance)
 
-<br/>
+<br>
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square\&logo=python\&logoColor=white)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-00A98F?style=flat-square)
 ![Sentence Transformers](https://img.shields.io/badge/Sentence_Transformers-Embeddings-FF6F00?style=flat-square)
 ![Gradio](https://img.shields.io/badge/Gradio-UI-FF4B4B?style=flat-square)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-FF4B4B?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![GDPR](https://img.shields.io/badge/Framework-GDPR-4285F4?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-2EA44F?style=flat-square)
 
 </div>
 
 ---
 
-<div align="center">
+## 🚀 Live Demo
 
-## 🌐 EXPERIENCE NEXUS
-
-### Turn policy documents into actionable compliance insights.
-
-**[🚀 Launch Live Website](https://nexus-ai-governance-0007.streamlit.app/)**
-
-</div>
+| Platform                  | Link                                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------- |
+| 🌐 **Web Application**    | [Launch Nexus AI Governance](https://nexus-ai-governance-0007.streamlit.app/)            |
+| 🤗 **Hugging Face Space** | [Open Hugging Face Space](https://huggingface.co/spaces/prince12raj/nexus-ai-governance) |
+| 💻 **GitHub Repository**  | [View Source Code](https://github.com/prince12raj/nexus-ai-governance)                   |
 
 ---
 
 # 🧭 What is Nexus?
 
-**Nexus AI Governance** is a compliance intelligence platform designed to help organizations analyze internal policies against regulatory knowledge.
+**Nexus AI Governance** is a compliance intelligence platform designed to analyze organizational policies against regulatory knowledge.
 
-Instead of manually searching through large regulatory documents, Nexus uses **semantic embeddings + vector search** to identify relevant regulatory evidence and then applies a compliance analysis engine to highlight potential risks.
+Instead of manually searching through large regulatory documents, Nexus uses:
+
+> **Text Processing → Semantic Embeddings → Vector Search → Evidence Retrieval → Compliance Analysis → Risk Assessment**
+
+The current prototype focuses on **GDPR-related compliance analysis** using a retrieval pipeline built with **Sentence Transformers and FAISS**, followed by a rule-based compliance engine.
+
+---
+
+# 🏗️ System Architecture
 
 ```text
-                     🏢 ORGANIZATIONAL POLICY
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │  Text Processing  │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │ Sentence Encoder  │
-                    │ all-MiniLM-L6-v2  │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │   Vector Query    │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │   FAISS Index     │
-                    │ Semantic Search   │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    📚 RELEVANT EVIDENCE
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │ Compliance Engine │
-                    └─────────┬─────────┘
-                              │
-                 ┌────────────┼────────────┐
-                 ▼            ▼            ▼
-             Retention    Collection    Security
-                 │            │            │
-                 └────────────┼────────────┘
-                              ▼
-                       📊 RISK ANALYSIS
-                              │
-                              ▼
-                       💡 RECOMMENDATIONS
-````
+                    ┌──────────────────────────┐
+                    │   🏢 ORGANIZATIONAL      │
+                    │        POLICY            │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │    Text Processing       │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │  Sentence Transformer   │
+                    │    all-MiniLM-L6-v2      │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │      Vector Query        │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │     FAISS Index          │
+                    │    Semantic Search       │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │   📚 Relevant Evidence   │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │   Compliance Engine      │
+                    └────────────┬─────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              ▼                  ▼                  ▼
+        Data Retention     Data Collection     Data Security
+              │                  │                  │
+              └──────────────────┼──────────────────┘
+                                 ▼
+                    ┌──────────────────────────┐
+                    │      📊 Risk Analysis    │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │    💡 Recommendations    │
+                    └──────────────────────────┘
+```
 
 ---
 
-# ✨ Core Capabilities
+# ✨ Core Features
 
-<table>
-<tr>
-<td width="50%">
-
-### 🔎 Semantic Regulatory Search
-
-Finds relevant regulatory evidence based on **meaning**, not just exact keyword matching.
-
-</td>
-
-<td width="50%">
-
-### 📚 RAG-Based Retrieval
-
-Retrieves the most relevant evidence from the indexed regulatory knowledge base.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-### 🛡️ Compliance Analysis
-
-Identifies potential issues across important compliance areas.
-
-</td>
-
-<td>
-
-### 📊 Risk Assessment
-
-Produces a project-specific risk indicator for the analyzed policy.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-### 💡 Recommendations
-
-Provides actionable suggestions based on detected compliance areas.
-
-</td>
-
-<td>
-
-### 📖 Evidence Transparency
-
-Shows the regulatory evidence retrieved for each audit.
-
-</td>
-</tr>
-</table>
+| Feature                     | Description                                                                              |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| 🔎 **Semantic Search**      | Finds regulatory evidence based on semantic meaning rather than simple keyword matching. |
+| 🧠 **RAG Pipeline**         | Retrieves relevant regulatory information from an indexed knowledge base.                |
+| 📚 **Evidence Retrieval**   | Displays the evidence used during policy analysis.                                       |
+| 🛡️ **Compliance Analysis** | Detects potential compliance issues across supported areas.                              |
+| 📊 **Risk Assessment**      | Generates a project-specific risk indicator.                                             |
+| 💡 **Recommendations**      | Provides suggestions based on detected compliance concerns.                              |
+| 🌐 **Web Interface**        | Provides an interactive interface for policy analysis.                                   |
+| ☁️ **Cloud Deployment**     | Available through Streamlit and Hugging Face Spaces.                                     |
 
 ---
 
-# 🎯 The Problem
+# 🎯 Problem Statement
 
-Modern organizations deal with an increasing number of:
+Organizations have to deal with large amounts of:
 
 * Internal policies
 * Regulatory requirements
-* Compliance documents
-* Security standards
 * Privacy requirements
+* Security standards
+* Compliance documentation
 
-Manual compliance review requires analysts to repeatedly:
+Traditional compliance review can require analysts to repeatedly perform:
 
 ```text
-Read → Search → Compare → Interpret → Document
+Read
+  ↓
+Search
+  ↓
+Compare
+  ↓
+Interpret
+  ↓
+Document
 ```
 
-This becomes difficult to scale.
+This process can become time-consuming as the number of policies and regulations increases.
 
-### Nexus changes the workflow to:
+### Nexus Workflow
 
 ```text
-Input Policy
-     ↓
-Semantic Retrieval
-     ↓
-Relevant Evidence
-     ↓
-Automated Analysis
-     ↓
-Risk Identification
-     ↓
-Recommendations
+             INPUT POLICY
+                  │
+                  ▼
+         ┌─────────────────┐
+         │ Semantic Search │
+         └────────┬────────┘
+                  │
+                  ▼
+         ┌─────────────────┐
+         │ Relevant GDPR   │
+         │    Evidence     │
+         └────────┬────────┘
+                  │
+                  ▼
+         ┌─────────────────┐
+         │ Compliance      │
+         │ Analysis        │
+         └────────┬────────┘
+                  │
+                  ▼
+         ┌─────────────────┐
+         │ Risk Detection  │
+         └────────┬────────┘
+                  │
+                  ▼
+         ┌─────────────────┐
+         │ Recommendations │
+         └─────────────────┘
 ```
 
 ---
 
 # 🧠 RAG Pipeline
 
-The core retrieval pipeline follows:
+The retrieval pipeline consists of the following stages:
 
 ```text
-┌─────────────────────┐
-│ Regulatory Dataset  │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Data Cleaning       │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Text Chunking       │
-│ 150 words / 30 ov.  │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Sentence Embeddings │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ FAISS Vector Index  │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Top-K Retrieval     │
-│ K = 5               │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Compliance Engine   │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Risk + Recommendation│
-└─────────────────────┘
+┌─────────────────────────┐
+│   GDPR Dataset          │
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   Data Processing       │
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   Text Chunking         │
+│   150 words / 30 overlap│
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   Sentence Embeddings   │
+│   all-MiniLM-L6-v2      │
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   FAISS Vector Index    │
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   Top-K Retrieval       │
+│   K = 5                 │
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   Compliance Engine     │
+└────────────┬────────────┘
+             ↓
+┌─────────────────────────┐
+│   Risk + Recommendations│
+└─────────────────────────┘
 ```
 
 ---
 
-# 🛠️ Technology Stack
-
-<div align="center">
-
-|      Layer      |         Technology        |
-| :-------------: | :-----------------------: |
-|   🐍 Language   |         **Python**        |
-|  🧠 Embeddings  | **Sentence Transformers** |
-|     🤖 Model    |    **all-MiniLM-L6-v2**   |
-| ⚡ Vector Search |         **FAISS**         |
-|     📊 Data     |     **Pandas + NumPy**    |
-|      🎨 UI      |         **Gradio**        |
-|    🌐 Web App   |       **Streamlit**       |
-|  ☁️ Deployment  |  **Hugging Face Spaces**  |
-|   📜 Framework  |          **GDPR**         |
-
-</div>
-
----
-
-# 🔬 Compliance Areas
-
-Nexus currently analyzes policies across three major areas:
+# 🔬 Current Compliance Areas
 
 ### 🗃️ Data Retention
 
-Detects policies involving:
+The system detects policies related to:
 
-* Indefinite data retention
+* Indefinite personal-data retention
 * Retention periods
 * Data deletion
 * Data erasure
 * Storage limitation
 
+---
+
 ### 📥 Data Collection
 
-Detects policies involving:
+The system analyzes concepts such as:
 
 * Personal data collection
 * Data minimization
 * Purpose of collection
 * Collection of unnecessary information
 
+---
+
 ### 🔐 Data Security
 
-Detects policies involving:
+The system detects concepts related to:
 
 * Unauthorized access
 * Security measures
@@ -285,32 +263,47 @@ Detects policies involving:
 
 # 📊 Example Audit
 
-### 📥 Input
+### Input Policy
 
 ```text
 Our company retains all customer personal data indefinitely
 and does not automatically delete old customer records.
 ```
 
-### 🔎 Nexus Analysis
+### Nexus Output
 
 ```text
-┌──────────────────────────────────────────┐
-│           COMPLIANCE AUDIT               │
-├──────────────────────────────────────────┤
-│                                          │
-│  Verdict       REVIEW REQUIRED           │
-│  Risk Level    HIGH                      │
-│  Score         60 / 100                  │
-│                                          │
-│  Area          Data Retention             │
-│                                          │
-└──────────────────────────────────────────┘
+╔══════════════════════════════════════╗
+║          COMPLIANCE AUDIT            ║
+╠══════════════════════════════════════╣
+║                                      ║
+║  Verdict     : REVIEW REQUIRED       ║
+║  Risk Level  : HIGH                  ║
+║  Score       : 60 / 100              ║
+║  Area        : Data Retention        ║
+║                                      ║
+╚══════════════════════════════════════╝
 ```
 
 ### 💡 Recommendation
 
 > Define a clear data-retention period and delete or anonymize personal data when it is no longer required.
+
+---
+
+# 🛠️ Technology Stack
+
+| Layer                   | Technology                |
+| ----------------------- | ------------------------- |
+| 🐍 Programming Language | **Python**                |
+| 🧠 Embeddings           | **Sentence Transformers** |
+| 🤖 Embedding Model      | **all-MiniLM-L6-v2**      |
+| ⚡ Vector Database       | **FAISS**                 |
+| 📊 Data Processing      | **Pandas + NumPy**        |
+| 🎨 Interface            | **Gradio**                |
+| 🌐 Web Application      | **Streamlit**             |
+| ☁️ Deployment           | **Hugging Face Spaces**   |
+| 📜 Compliance Framework | **GDPR**                  |
 
 ---
 
@@ -324,6 +317,8 @@ nexus-ai-governance/
 ├── 📄 README.md
 │
 ├── 📁 data/
+│   │
+│   ├── 📁 raw/
 │   │
 │   ├── 📁 processed/
 │   │   ├── gdpr_raw.csv
@@ -341,36 +336,36 @@ nexus-ai-governance/
 
 # ⚙️ Run Locally
 
-## 1. Clone
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/prince12raj/nexus-ai-governance.git
 cd nexus-ai-governance
 ```
 
-## 2. Create Environment
+### 2️⃣ Create Virtual Environment
 
-### Windows
+#### Windows
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-### Linux / macOS
+#### Linux / macOS
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-## 3. Install Dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 4. Run
+### 4️⃣ Run Application
 
 ```bash
 python app.py
@@ -393,11 +388,13 @@ torch
 
 # 🔐 Privacy & Security
 
-The current prototype does not depend on:
+The current prototype does **not** require:
 
+```text
 ❌ OpenAI API
 ❌ Ollama
 ❌ External LLM APIs
+```
 
 The core pipeline uses:
 
@@ -411,30 +408,27 @@ Regulatory Metadata
 Rule-Based Compliance Engine
 ```
 
-For production use, additional security controls would be required before processing confidential organizational information.
+For production environments, additional controls would be required before processing confidential organizational information.
 
 ---
 
-# 🚧 Current Status
+# 🚧 Project Status
 
-<div align="center">
-
-| Component               | Status |
-| :---------------------- | :----: |
-| GDPR Knowledge Base     |    ✅   |
-| Text Chunking           |    ✅   |
-| Embeddings              |    ✅   |
-| FAISS Retrieval         |    ✅   |
-| Semantic Search         |    ✅   |
-| Compliance Detection    |    ✅   |
-| Risk Assessment         |    ✅   |
-| Recommendations         |    ✅   |
-| Streamlit Website       |    ✅   |
-| Hugging Face Deployment |   🚀   |
-| Multi-framework Support |   🔜   |
-| LLM Reasoning           |   🔜   |
-
-</div>
+| Component                 | Status |
+| ------------------------- | :----: |
+| GDPR Knowledge Base       |    ✅   |
+| Data Processing           |    ✅   |
+| Text Chunking             |    ✅   |
+| Embeddings                |    ✅   |
+| FAISS Retrieval           |    ✅   |
+| Semantic Search           |    ✅   |
+| Compliance Detection      |    ✅   |
+| Risk Assessment           |    ✅   |
+| Recommendations           |    ✅   |
+| Streamlit Web Application |    ✅   |
+| Hugging Face Deployment   |   🚀   |
+| Multi-Framework Support   |   🔜   |
+| LLM Reasoning             |   🔜   |
 
 ---
 
@@ -443,15 +437,19 @@ For production use, additional security controls would be required before proces
 ### 🌍 Multi-Framework Compliance
 
 ```text
-GDPR
- ↓
-ISO 27001
- ↓
-HIPAA
- ↓
-SOC 2
- ↓
-PCI-DSS
+              GDPR
+                │
+                ▼
+           ISO 27001
+                │
+                ▼
+              HIPAA
+                │
+                ▼
+              SOC 2
+                │
+                ▼
+            PCI-DSS
 ```
 
 ### 🤖 Advanced AI
@@ -462,39 +460,74 @@ PCI-DSS
 * Natural-language audit reports
 * Multi-agent compliance auditing
 
-### 🏢 Enterprise
+### 🏢 Enterprise Features
 
-* 📄 PDF/document ingestion
-* 🔍 PII detection
-* 🛡️ Prompt-injection protection
-* 👥 Role-based access control
-* 📊 Compliance dashboards
-* 🗂️ Audit history
-* 🔄 Regulatory knowledge updates
-* 🏢 Organization-specific knowledge bases
+* PDF/document ingestion
+* PII detection
+* Prompt-injection protection
+* Role-based access control
+* Compliance dashboards
+* Audit history
+* Regulatory knowledge updates
+* Organization-specific knowledge bases
 
 ---
 
-# 📈 Why This Project?
-
-Nexus demonstrates how modern AI engineering techniques can be applied to a real-world governance problem.
-
-### Key concepts implemented
+# 🧩 Key Concepts Demonstrated
 
 ```text
-RAG
-│
-├── Embeddings
-├── Vector Search
-├── FAISS
-├── Semantic Retrieval
-├── Text Chunking
-│
-└── Compliance Automation
-    ├── Risk Detection
-    ├── Evidence Retrieval
-    └── Recommendations
+                    NEXUS
+                      │
+          ┌───────────┴───────────┐
+          │                       │
+         RAG               Compliance
+          │                       │
+    ┌─────┼─────┐          ┌──────┼──────┐
+    │     │     │          │      │      │
+Embedding FAISS Search    Risk  Evidence Rules
+    │     │     │          │      │      │
+    └─────┴─────┘          └──────┴──────┘
 ```
+
+### Technical Concepts
+
+* Retrieval-Augmented Generation architecture
+* Semantic embeddings
+* Vector similarity search
+* FAISS indexing
+* Text chunking
+* Regulatory knowledge retrieval
+* Rule-based compliance detection
+* Risk analysis
+* Recommendation generation
+
+---
+
+# 📈 Why Nexus?
+
+Nexus demonstrates how modern AI engineering and information-retrieval techniques can be applied to a practical governance and compliance problem.
+
+The project combines:
+
+**AI / ML**
+
+→ Semantic embeddings
+→ Vector search
+→ Retrieval pipelines
+
+**Software Engineering**
+
+→ Python
+→ Data processing
+→ Web application
+→ Cloud deployment
+
+**Governance**
+
+→ GDPR knowledge
+→ Compliance analysis
+→ Risk identification
+→ Evidence-based recommendations
 
 ---
 
@@ -506,8 +539,6 @@ RAG
 
 **B.Tech Computer Science & Engineering**
 
-<br/>
-
 [![GitHub](https://img.shields.io/badge/GitHub-prince12raj-181717?style=for-the-badge\&logo=github)](https://github.com/prince12raj)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Prince_Raj-0A66C2?style=for-the-badge\&logo=linkedin)](https://www.linkedin.com/in/prince-raj-1a1801309/)
@@ -518,21 +549,17 @@ RAG
 
 # 🌐 Project Links
 
-<div align="center">
+### 🚀 Live Application
 
-### 🚀 Live Website
-
-**https://nexus-ai-governance-0007.streamlit.app/**
+**[Launch Nexus AI Governance →](https://nexus-ai-governance-0007.streamlit.app/)**
 
 ### 🤗 Hugging Face
 
-**[Nexus AI Governance Space](https://huggingface.co/spaces/prince12raj/nexus-ai-governance)**
+**[Open Nexus AI Governance Space →](https://huggingface.co/spaces/prince12raj/nexus-ai-governance)**
 
 ### 💻 GitHub
 
-**[Nexus AI Governance Repository](https://github.com/prince12raj/nexus-ai-governance)**
-
-</div>
+**[View Nexus AI Governance Repository →](https://github.com/prince12raj/nexus-ai-governance)**
 
 ---
 
@@ -548,19 +575,12 @@ The risk score displayed by the application is a **project-specific risk indicat
 
 <div align="center">
 
-## 🛡️ NEXUS AI GOVERNANCE
+# 🛡️ NEXUS AI GOVERNANCE
 
 ### *Connect Policies. Retrieve Evidence. Identify Risk.*
 
-<br/>
+<br>
 
 ⭐ **If you find this project interesting, consider starring the repository.**
 
 </div>
-```
-
-### One important thing
-
-Your README will look **much better on GitHub** because of the centered hero, badges, tables, architecture diagrams, status dashboard, roadmap, and prominent live-demo buttons.
-
-Use the **Streamlit link as the main “Live Demo”** because that's your actual working website, and keep the Hugging Face link as the secondary deployment.
